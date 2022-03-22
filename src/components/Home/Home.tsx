@@ -8,7 +8,6 @@ function HomeContainer () {
     const { isLoading, error,data} = useQuery('photo',getPhotoRest,{
         refetchOnWindowFocus : false
     })
-
     if(isLoading || !data) return <div>로딩중</div>;
     if(error) return <div>에러</div>;
     const photoData = data.data
@@ -30,6 +29,7 @@ const Container = styled.div`
   justify-content: center;
 `;
 const Image = styled.div`
+  z-index: 1000;
   position: absolute;
   width: 400px;
   height: 400px;
