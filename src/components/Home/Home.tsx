@@ -11,6 +11,7 @@ function HomeContainer () {
     const { isLoading, error,data} = useQuery('photo',getPhotoRest,{
         refetchOnWindowFocus : false
     })
+
     const dispatch = useDispatch();
     const toggle = useSelector((state : RootState) => state.common.toggle)
     const onClick = () => {
@@ -39,7 +40,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 const Image = styled.div<{toggle : boolean}>`
+
   position: absolute;
   width: 400px;
   height: 400px;
